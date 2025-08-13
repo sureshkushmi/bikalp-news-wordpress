@@ -1,0 +1,212 @@
+.banner-rotator {
+    max-width: 100%;
+    height: 70px;
+    background: #042864; /* blueest to pink */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  .rotating-item {
+    margin-left: 20px; /* adds space between slogans */
+    text-align: center;
+  }
+  
+  .typewriter {
+    margin-bottom: 8px;
+  }
+   
+  .banner-slide {
+    position: absolute;
+    opacity: 0;
+    animation: fade 12s infinite;
+    width: 100%;
+  }
+  
+  .banner-slide:nth-child(2) {
+    animation-delay: 4s;
+  }
+  .banner-slide:nth-child(3) {
+    animation-delay: 8s;
+  }
+  
+  .slogan {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .tag {
+    font-size: 14px;
+    margin-top: 4px;
+    color: #ffdddd;
+  }
+  
+  @keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .special-news-banner {
+    background: linear-gradient(135deg, #7f9cf5, #d0bfff);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-height: 90px; /* same as image */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeBanner 8s infinite;
+  }
+  
+  .special-news-link {
+    color: white;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  }
+  
+  .special-news-link:hover {
+    text-shadow: 0 0 10px #fff;
+  }
+  
+  /* Animation: appear, hold, disappear */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #site-info {
+    background-color: #15557b;
+  }
+  #footer-widgets-container {
+    border-top: 8px solid #15557b;
+  }
+  .Bikalpa.News__featured_img {
+    text-align: center;
+  }
+  .Bikalpa.News__featured_img img {
+    display: inline-block;
+  }
+  /*==================== for slider =============
+   /* Basic styling */
+   .swiper {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+    position: relative; /* needed for arrows absolute positioning */
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%; /* Ensure slide fills the swiper height */
+    position: relative; /* so arrows inside can position relative to slide */
+  }
+  
+  .slide-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  /* Position navigation arrows vertically centered on sides */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #007bff;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(-50%);
+    margin-top: 0;  /* REMOVE your old margin-top */
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    left: -45px;  /* move arrow 45px left outside image */
+  }
+  
+  .swiper-button-next {
+    right: -45px; /* move arrow 45px right outside image */
+  }
+  
+  
+  /* Pagination bullets below the slider */
+  .swiper-pagination {
+    text-align: center;
+    position: relative !important; /* override swiper inline styles */
+    margin-top: 5px;
+    bottom: auto !important;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  /* Bullets color */
+  .swiper-pagination-bullet {
+    background: #888;
+    opacity: 0.7;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #007bff;
+    opacity: 1;
+  }
+  
+
+  /* Hide ticker by default */
+#breaking-news-in-header,
+.ticker-wrapper,
+.ticker {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Show ticker only on mobile (max width 768px) */
+@media (max-width: 768px) {
+  #breaking-news-in-header,
+  .ticker-wrapper,
+  .ticker {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+.side-aside {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hide off screen by default */
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.side-aside-open .side-aside {
+  right: 0; /* Slide in when open */
+}

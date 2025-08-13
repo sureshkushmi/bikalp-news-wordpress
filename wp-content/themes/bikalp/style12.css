@@ -1,0 +1,372 @@
+/*
+Theme Name: Bikalp News
+Theme URI: https://bikalpanews.com/
+Author: Bikalp
+Author URI: https://bikalpanews.com/
+Description: Bikalp News.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bikalpanews
+*/
+
+.banner-rotator {
+    max-width: 100%;
+    height: 70px;
+    background: #042864; /* blueest to pink */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  .rotating-item {
+    margin-left: 20px; /* adds space between slogans */
+    text-align: center;
+  }
+  
+  .typewriter {
+    margin-bottom: 8px;
+  }
+   
+  .banner-slide {
+    position: absolute;
+    opacity: 0;
+    animation: fade 12s infinite;
+    width: 100%;
+  }
+  
+  .banner-slide:nth-child(2) {
+    animation-delay: 4s;
+  }
+  .banner-slide:nth-child(3) {
+    animation-delay: 8s;
+  }
+  
+  .slogan {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .tag {
+    font-size: 14px;
+    margin-top: 4px;
+    color: #ffdddd;
+  }
+  
+  @keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .special-news-banner {
+    background: linear-gradient(135deg, #7f9cf5, #d0bfff);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-height: 90px; /* same as image */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeBanner 8s infinite;
+  }
+  
+  .special-news-link {
+    color: white;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  }
+  
+  .special-news-link:hover {
+    text-shadow: 0 0 10px #fff;
+  }
+  
+  /* Animation: appear, hold, disappear */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #site-info {
+    background-color: #15557b;
+  }
+  #footer-widgets-container {
+    border-top: 8px solid #15557b;
+  }
+  .Bikalpa.News__featured_img {
+    text-align: center;
+  }
+  .Bikalpa.News__featured_img img {
+    display: inline-block;
+  }
+  /*==================== for slider =============
+   /* Basic styling */
+   .swiper {
+    width: 100%;
+    margin: 40px auto 60px auto;
+    position: relative; /* needed for arrows absolute positioning */
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 6px;
+  }
+  
+  .slide-img img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .my-swiper  .Bikalpa-News__title {
+    margin-top: 8px;
+    text-align: center;
+  }
+  
+  .my-swiper .post-title a {
+    color: #4b4a4a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+  
+  /* Position navigation arrows vertically centered on sides */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #007bff;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(-50%);
+    margin-top: 0;  /* REMOVE your old margin-top */
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    left: -45px;  /* move arrow 45px left outside image */
+  }
+  
+  .swiper-button-next {
+    right: -45px; /* move arrow 45px right outside image */
+  }
+  
+  
+  /* Pagination bullets below the slider */
+  .swiper-pagination {
+    text-align: center;
+    position: relative !important; /* override swiper inline styles */
+    margin-top: 5px;
+    bottom: auto !important;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  /* Bullets color */
+  .swiper-pagination-bullet {
+    background: #888;
+    opacity: 0.7;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #007bff;
+    opacity: 1;
+  }
+  
+
+  #footer-widgets-container {
+    border-top: 8px solid #007bff;
+  }
+  
+.side-aside {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hide off screen by default */
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.side-aside-open .side-aside {
+  right: 0; /* Slide in when open */
+}
+
+
+/* for gallery  */
+/* ===== OnlineKhabar-like gallery styling (targeted) ===== */
+#tiepost-1029-section-5889 .ok-section,
+#ok-gallery-1029 { background:#161a25; padding:28px 0; color:#fff; }
+
+/* container width (adjust to your theme grid) */
+#ok-gallery-1029 .ok-container {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 16px;
+  box-sizing:border-box;
+}
+
+/* title */
+#ok-gallery-1029 .ok-section-title h2 {
+  font-size:22px;
+  font-weight:700;
+  margin:0 0 18px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+#ok-gallery-1029 .ok-section-title .circle-arrow {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+#ok-gallery-1029 .ok-section-title .circle-arrow i { transform:translateX(1px); }
+
+/* carousel wrapper */
+#ok-gallery-1029 .ok-carousel-wrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+/* the track */
+#ok-gallery-1029 .ok-carousel{
+  display:flex;
+  gap:30px;
+  overflow:hidden;
+  width:100%;
+  align-items:flex-start;
+  height:450px; /* same as onlinekhabar */
+  padding-bottom:6px;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* each card */
+#ok-gallery-1029 .ok-item{
+  flex:0 0 329px; /* fixed width like onlinekhabar */
+  max-width:329px;
+  height:100%;
+  box-sizing:border-box;
+  position:relative;
+  border-radius:8px;
+  overflow:hidden;
+  background:#1c2230;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* image */
+#ok-gallery-1029 .ok-post-thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  vertical-align:middle;
+}
+
+/* gallery icon (top-left) */
+#ok-gallery-1029 .ok-post-has-gallery{
+  position:absolute;
+  left:12px;
+  top:12px;
+  z-index:4;
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+}
+
+/* title overlay at bottom */
+#ok-gallery-1029 .ok-post-content-wrap{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:18px;
+  background:linear-gradient(to top, rgba(0,0,0,0.65), transparent 40%);
+  z-index:3;
+}
+#ok-gallery-1029 .ok-news-title-txt{
+  color:#fff;
+  font-size:15px;
+  margin:0;
+  line-height:1.3;
+  font-weight:600;
+}
+
+/* nav arrows */
+#ok-gallery-1029 .ok-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:0;
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:6;
+  transition:background .2s;
+}
+#ok-gallery-1029 .ok-prev{ left:-22px; }
+#ok-gallery-1029 .ok-next{ right:-22px; }
+#ok-gallery-1029 .ok-nav:hover{ background:rgba(0,0,0,0.65); }
+
+/* hide native scrollbar elegantly */
+#ok-gallery-1029 .ok-carousel::-webkit-scrollbar { height:8px; }
+#ok-gallery-1029 .ok-carousel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius:8px; }
+#ok-gallery-1029 .ok-carousel { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.08) transparent; }
+
+/* responsive breakpoints */
+@media (max-width: 1023px) {
+  #ok-gallery-1029 .ok-item { flex:0 0 46%; max-width:46%; } /* 2 per view */
+  #ok-gallery-1029 .ok-carousel { height:380px; }
+  #ok-gallery-1029 .ok-prev{ left:0; } #ok-gallery-1029 .ok-next{ right:0; }
+}
+@media (max-width: 639px) {
+  #ok-gallery-1029 .ok-item { flex:0 0 88%; max-width:88%; } /* 1 per view */
+  #ok-gallery-1029 .ok-carousel { height:320px; }
+  #ok-gallery-1029 .ok-section-title h2 { font-size:18px; }
+}
