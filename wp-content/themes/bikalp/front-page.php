@@ -9,7 +9,12 @@ get_template_part('partials/top-navigation');
 get_template_part('partials/tie-post1');
 get_template_part('partials/tie-post2');
 
+get_template_part('partials/tie-post3');
+get_template_part('partials/tie-post4');
 get_template_part('partials/tie-post5');
+get_template_part('partials/tie-post6');
+get_template_part('partials/tie-post7');
+get_template_part('partials/tie-post8');
 get_template_part('partials/tie-post9');
 ?>
 

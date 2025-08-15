@@ -1,92 +1,149 @@
-<?php
-// Slugs of categories to exclude
-$exclude_slugs = ['breaking-news', 'ई-पेपर', 'फिचर', 'फोटो', 'समाचार'];
+<div id="tiepost-1020-section-8869" class="section-wrapper container normal-width without-background">
+  <div class="section-item sidebar-right has-sidebar">
+    <div class="container-normal">
+      <div class="tie-row main-content-row">
 
-// Get the IDs of these categories
-$exclude_ids = [];
-foreach ($exclude_slugs as $slug) {
-    $cat = get_category_by_slug($slug);
-    if ($cat) {
-        $exclude_ids[] = $cat->term_id;
-    }
-}
+        <!-- Main content (बेनी category) -->
+        <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+          <div id="tie-block_979" class="mag-box big-post-left-box has-first-big-post">
+            <div class="container-wrapper">
 
-// Get all categories except the excluded ones
-$categories = get_categories([
-    'orderby' => 'name',
-    'order'   => 'ASC',
-    'hide_empty' => 1,
-    'exclude' => $exclude_ids
-]);
+              <div class="mag-box-title the-global-title">
+                <h3><?php echo esc_html( get_cat_name( get_category_by_slug('बेनी')->term_id ) ); ?></h3>
+              </div>
 
-foreach ($categories as $category) :
-    // Query posts in this category
-    $args = [
-        'post_type' => 'post',
-        'cat' => $category->term_id,
-        'posts_per_page' => 10,
-    ];
-    $query = new WP_Query($args);
+              <div class="mag-box-container clearfix">
+                <ul class="posts-items posts-list-container">
 
-    if ($query->have_posts()) : ?>
-        <div class="section-wrapper container-full without-background">
-            <div class="section-item full-width">
-                <div class="container">
-                    <div class="tie-row main-content-row">
-                        <div class="main-content tie-col-md-12">
-                            <div class="mag-box big-post-left-box big-thumb-left-box first-post-gradient media-overlay">
-                                <div class="container-wrapper">
-                                    <div class="mag-box-title the-global-title">
-                                        <h3><?php echo esc_html($category->name); ?></h3>
-                                    </div>
-                                    <div class="mag-box-container clearfix">
-                                        <ul class="posts-items posts-list-container">
-                                        <?php
-                                        $first_post = true;
-                                        while ($query->have_posts()) : $query->the_post();
-                                            if ($first_post) : ?>
-                                                <li class="post-item tie-standard">
-                                                    <div class="big-thumb-left-box-inner bg-none" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>)">
-                                                        <a href="<?php the_permalink(); ?>" class="post-thumb" aria-label="<?php the_title(); ?>"></a>
-                                                    </div>
-                                                    <div class="Bikalpa News__title">
-                                                        <div class="post-details">
-                                                            <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                                            <div class="thumb-meta">
-                                                                <div class="post-meta clearfix">
-                                                                    <span class="date meta-item fa-before">
-                                                                        <?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <?php $first_post = false; ?>
-                                            <?php else : ?>
-                                                <li class="post-item tie-standard">
-                                                    <a href="<?php the_permalink(); ?>" class="post-thumb" aria-label="<?php the_title(); ?>">
-                                                        <?php the_post_thumbnail('medium'); ?>
-                                                    </a>
-                                                    <div class="post-details">
-                                                        <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                                        <div class="post-meta clearfix">
-                                                            <span class="date meta-item fa-before"><?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?></span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            <?php endif;
-                                        endwhile; wp_reset_postdata(); ?>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
+                  <?php
+                  $main_args = array(
+                    'category_name' => 'बेनी',
+                    'posts_per_page' => 5,
+                  );
+                  $main_query = new WP_Query( $main_args );
+
+                  if ( $main_query->have_posts() ) :
+                    $first_post = true;
+                    while ( $main_query->have_posts() ) : $main_query->the_post(); ?>
+                      
+                      <li class="post-item tie-standard">
+                        <a href="<?php the_permalink(); ?>" class="post-thumb">
+                          <?php
+                          $categories = get_the_category();
+                          if ( ! empty( $categories ) ) {
+                              echo '<span class="post-cat-wrap"><span class="post-cat tie-cat-' . esc_attr($categories[0]->term_id) . '"></span></span>';
+                          }
+                          if ( has_post_thumbnail() ) {
+                              the_post_thumbnail('medium');
+                          } else {
+                              echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/petrolium.jpg' ) . '" alt="' . get_the_title() . '" />';
+                          }
+                          ?>
+                        </a>
+
+                        <div class="post-details">
+                          <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                          <div class="post-meta clearfix">
+                            <span class="single-author no-avatars">
+                              <span class="meta-item meta-author-wrapper">
+                                <span class="meta-author">
+                                  <b class="author-name"><?php the_author(); ?></b>
+                                </span>
+                              </span>
+                            </span>
+                            <span class="date meta-item fa-before"><?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?></span>
+                          </div>
+
+                          <?php if ( $first_post ) : ?>
+                            <p class="post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+                            <?php $first_post = false; ?>
+                          <?php endif; ?>
+                        </div>
+                      </li>
+
+                    <?php endwhile;
+                    wp_reset_postdata();
+                  else : ?>
+                    <li><?php esc_html_e('No posts found in this category.', 'your-theme-textdomain'); ?></li>
+                  <?php endif; ?>
+
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar (प्रवास category) -->
+        <aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side" aria-label="Primary Sidebar">
+    <div class="theiaStickySidebar">
+        <div class="container-wrapper widget posts-list">
+            <div class="widget-title the-global-title">
+                <div class="the-subtitle">प्रवास</div>
+            </div>
+
+            <div class="posts-list-big-first has-first-big-post">
+                <ul class="posts-list-items">
+                    <?php
+                    $sidebar_args = array(
+                        'category_name'  => 'प्रवास',
+                        'posts_per_page' => 2, // change number if needed
+                    );
+                    $sidebar_query = new WP_Query( $sidebar_args );
+
+                    if ( $sidebar_query->have_posts() ) :
+                        $count = 0;
+                        while ( $sidebar_query->have_posts() ) : $sidebar_query->the_post();
+                            $count++;
+                    ?>
+                        <li class="widget-post-list tie-standard">
+                            <div class="post-widget-thumbnail">
+                                <a href="<?php the_permalink(); ?>" class="post-thumb">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ( ! empty( $categories ) ) {
+                                        echo '<span class="post-cat-wrap"><span class="post-cat tie-cat-' . esc_attr($categories[0]->term_id) . '"></span></span>';
+                                    }
+
+                                    if ( has_post_thumbnail() ) {
+                                        if ( $count === 1 ) {
+                                            the_post_thumbnail('medium'); // first big image
+                                        } else {
+                                            the_post_thumbnail([150, 102], ['class' => 'tie-small-image']); // small image
+                                        }
+                                    } else {
+                                        echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/petrolium.jpg' ) . '" alt="' . esc_attr(get_the_title()) . '" />';
+                                    }
+                                    ?>
+                                </a>
+                            </div>
+
+                            <div class="post-widget-body">
+                                <h3 class="post-title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h3>
+                                <div class="post-meta">
+                                    <span class="date meta-item fa-before"><?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?></span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </li>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    ?>
+                        <li><?php esc_html_e('No posts found in this category.', 'your-theme-textdomain'); ?></li>
+                    <?php endif; ?>
+                </ul>
             </div>
-        </div>
-    <?php endif;
 
-endforeach; ?>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</aside>
+
+
+      </div><!-- .main-content-row -->
+    </div><!-- .container -->
+  </div><!-- .section-item -->
+</div><!-- #tiepost-1020-section-8869 -->

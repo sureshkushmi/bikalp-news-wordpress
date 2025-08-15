@@ -1,126 +1,151 @@
-<div id="tiepost-1020-section-5886" class="section-wrapper container-full without-background">
-  <div class="section-item sidebar-right has-sidebar" style="">
-
-    <div class="container">
+<div id="tiepost-1020-section-8869" class="section-wrapper container normal-width without-background">
+  <div class="section-item sidebar-right has-sidebar">
+    <div class="container-normal">
       <div class="tie-row main-content-row">
+
+        <!-- Main content (रघुगंगा category) -->
         <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
-
-          <div id="tie-block_2923" class="mag-box full-width-img-news-box content-only">
-
+          <div id="tie-block_979" class="mag-box big-post-left-box has-first-big-post">
             <div class="container-wrapper">
 
               <div class="mag-box-title the-global-title">
-                <h3>भिडियो</h3>
-              </div><!-- .mag-box-title /-->
+                <h3><?php echo esc_html( get_cat_name( get_category_by_slug('रघुगंगा')->term_id ) ); ?></h3>
+              </div>
 
               <div class="mag-box-container clearfix">
-
                 <ul class="posts-items posts-list-container">
-                  <li class="post-item tie-standard">
 
-                    <h2 class="post-title text-align-center">
-                      <a href="#" aria-label="मासिँदै स्थानीय जातको रैथाने टिमुर – फोटो फिचर">मासिँदै स्थानीय जातको रैथाने टिमुर – फोटो फिचर</a>
-                    </h2>
-                    <h3 class="ntv-sub-title text-align-center"></h3>
-                    <div class="post-meta clearfix">
-                      <span class="single-author no-avatars">
-                        <span class="meta-item meta-author-wrapper">
-                          <span class="meta-author">
-                            <b class="author-name">
-                              <span class="meta-author-avatar m-5" aria-hidden="true">
-                                <img src="/assets/images/favicon.png" alt="Author avatar" />
-                              </span> सुरेश थारु विकल्प न्युज
-                            </b>
-                          </span>
-                        </span>
-                      </span>
-                      <span class="date meta-item fa-before">२२ श्रावण, १२:१७</span>
-                    </div><!-- .post-meta -->
+                  <?php
+                  $main_args = array(
+                    'category_name' => 'रघुगंगा',
+                    'posts_per_page' => 5,
+                  );
+                  $main_query = new WP_Query( $main_args );
 
-                    <div class="ntv__featured_img">
-                      <a href="#" aria-label="मासिँदै स्थानीय जातको रैथाने टिमुर – फोटो फिचर">
-                        <img width="1000" height="500" src="assets/images/raithane_timur.jpg" class="attachment-ntv_featured_news_image size-ntv_featured_news_image wp-post-image" alt="" />
-                      </a>
-                    </div>
+                  if ( $main_query->have_posts() ) :
+                    $first_post = true;
+                    while ( $main_query->have_posts() ) : $main_query->the_post(); ?>
 
-                  </li>
+                      <li class="post-item tie-standard">
+                        <a href="<?php the_permalink(); ?>" class="post-thumb">
+                          <?php
+                          $categories = get_the_category();
+                          if ( ! empty( $categories ) ) {
+                              echo '<span class="post-cat-wrap"><span class="post-cat tie-cat-' . esc_attr($categories[0]->term_id) . '"></span></span>';
+                          }
+                          if ( has_post_thumbnail() ) {
+                              the_post_thumbnail('medium');
+                          } else {
+                              echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/petrolium.jpg' ) . '" alt="' . get_the_title() . '" />';
+                          }
+                          ?>
+                        </a>
+
+                        <div class="post-details">
+                          <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                          <div class="post-meta clearfix">
+                            <span class="single-author no-avatars">
+                              <span class="meta-item meta-author-wrapper">
+                                <span class="meta-author">
+                                  <b class="author-name"><?php the_author(); ?></b>
+                                </span>
+                              </span>
+                            </span>
+                            <span class="date meta-item fa-before"><?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?></span>
+                          </div>
+
+                          <?php if ( $first_post ) : ?>
+                            <p class="post-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+                            <?php $first_post = false; ?>
+                          <?php endif; ?>
+                        </div>
+                      </li>
+
+                  <?php endwhile;
+                    wp_reset_postdata();
+                  else : ?>
+                    <li><?php esc_html_e('No posts found in this category.', 'your-theme-textdomain'); ?></li>
+                  <?php endif; ?>
+
                 </ul>
-
                 <div class="clearfix"></div>
-              </div><!-- .mag-box-container /-->
+              </div>
+            </div>
+          </div>
+        </div>
 
-            </div><!-- .container-wrapper /-->
-
-          </div><!-- .mag-box /-->
-
-        </div><!-- .main-content /-->
-
+        <!-- Sidebar (भिडियो category) -->
         <aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side" aria-label="Primary Sidebar">
-          <div class="theiaStickySidebar">
-            <div id="posts-list-widget-32" class="container-wrapper widget posts-list">
-              <div class="widget-title the-global-title">
-                <div class="the-subtitle">कला</div>
-              </div>
-              <div class="posts-list-big-first has-first-big-post">
+    <div class="theiaStickySidebar">
+        <div class="container-wrapper widget posts-list">
+            <div class="widget-title the-global-title">
+                <div class="the-subtitle">भिडियो</div>
+            </div>
+
+            <div class="posts-list-big-first has-first-big-post">
                 <ul class="posts-list-items">
+                    <?php
+                    $sidebar_args = array(
+                        'category_name'  => 'भिडियो',
+                        'posts_per_page' => 2,
+                    );
+                    $sidebar_query = new WP_Query( $sidebar_args );
 
-                  <li class="widget-post-list tie-standard">
+                    if ( $sidebar_query->have_posts() ) :
+                        $count = 0;
+                        while ( $sidebar_query->have_posts() ) : $sidebar_query->the_post();
+                            $count++;
+                    ?>
+                        <li class="widget-post-list tie-standard">
+                            <div class="post-widget-thumbnail">
+                                <a href="<?php the_permalink(); ?>" class="post-thumb">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ( ! empty( $categories ) ) {
+                                        echo '<span class="post-cat-wrap"><span class="post-cat tie-cat-' . esc_attr($categories[0]->term_id) . '">' . esc_html($categories[0]->name) . '</span></span>';
+                                    }
 
-                    <div class="post-widget-thumbnail">
-                      <a href="#" aria-label="सर्वनाममा नाटक ‘जब फूलले आकार लिन्छ…’ मञ्चन" class="post-thumb">
-                        <span class="post-cat-wrap"><span class="post-cat tie-cat-24">कला</span></span>
-                        <img width="390" height="220" src="assets/images/raithane_timur.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="सर्वनाममा नाटक ‘जब फूलले आकार लिन्छ…’ मञ्चन" />
-                      </a>
-                    </div><!-- post-alignleft /-->
+                                    if ( has_post_thumbnail() ) {
+                                        if ( $count === 1 ) {
+                                            // First post: big image
+                                            the_post_thumbnail('medium');
+                                        } else {
+                                            // Second post: small image
+                                            the_post_thumbnail([150, 102], ['class' => 'tie-small-image']);
+                                        }
+                                    } else {
+                                        echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/petrolium.jpg' ) . '" alt="' . esc_attr(get_the_title()) . '" />';
+                                    }
+                                    ?>
+                                </a>
+                            </div>
 
-                    <div class="post-widget-body">
-                      <h3 class="post-title"><a href="#">सर्वनाममा नाटक ‘जब फूलले आकार लिन्छ…’ मञ्चन</a></h3>
-                      <div class="post-meta">
-                        <span class="date meta-item fa-before">१५ श्रावण, ११:०५</span>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="widget-post-list tie-standard">
-
-                    <div class="post-widget-thumbnail">
-                      <a href="#" aria-label="तीज गीतमार्फत सामाजिक चेतना जगाउँदै हरिदेवी कोइराला" class="post-thumb">
-                        <img width="220" height="150" src="assets/images/raithane_timur.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="तीज गीतमार्फत सामाजिक चेतना जगाउँदै हरिदेवी कोइराला" />
-                      </a>
-                    </div><!-- post-alignleft /-->
-
-                    <div class="post-widget-body">
-                      <h3 class="post-title"><a href="#">तीज गीतमार्फत सामाजिक चेतना जगाउँदै हरिदेवी कोइराला</a></h3>
-                      <div class="post-meta">
-                        <span class="date meta-item fa-before">१४ श्रावण, ०५:१०</span>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="widget-post-list tie-standard">
-
-                    <div class="post-widget-thumbnail">
-                      <a href="#" aria-label="‘मेरो भ्वाइस युनिभर्स र मेरो डान्स युनिभर्स’का कलाकारसँग सभामुखको अन्तरक्रिया" class="post-thumb">
-                        <img width="220" height="150" src="assets/images/raithane_timur.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="‘मेरो भ्वाइस युनिभर्स र मेरो डान्स युनिभर्स’का कलाकारसँग सभामुखको अन्तरक्रिया" />
-                      </a>
-                    </div><!-- post-alignleft /-->
-
-                    <div class="post-widget-body">
-                      <h3 class="post-title"><a href="#">‘मेरो भ्वाइस युनिभर्स र मेरो डान्स युनिभर्स’का कलाकारसँग सभामुखको अन्तरक्रिया</a></h3>
-                      <div class="post-meta">
-                        <span class="date meta-item fa-before">५ श्रावण, १४:४४</span>
-                      </div>
-                    </div>
-                  </li>
-
+                            <div class="post-widget-body">
+                                <h3 class="post-title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h3>
+                                <div class="post-meta">
+                                    <span class="date meta-item fa-before"><?php echo nepali_date(get_the_date('Y-m-d H:i:s')); ?></span>
+                                </div>
+                            </div>
+                        </li>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    ?>
+                        <li><?php esc_html_e('No posts found in this category.', 'your-theme-textdomain'); ?></li>
+                    <?php endif; ?>
                 </ul>
-              </div>
-              <div class="clearfix"></div>
-            </div><!-- .widget /-->
-          </div><!-- .theiaStickySidebar /-->
-        </aside><!-- .sidebar /-->
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</aside>
+
 
       </div><!-- .main-content-row -->
-    </div><!-- .container /-->
-  </div><!-- .section-item /-->
-</div>
+    </div><!-- .container -->
+  </div><!-- .section-item -->
+</div><!-- #tiepost-1020-section-8869 -->

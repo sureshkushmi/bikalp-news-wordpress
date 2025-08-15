@@ -17,7 +17,7 @@
 
                   <?php
                   $news_posts = new WP_Query(array(
-                      'posts_per_page' => 12, // total posts
+                      'posts_per_page' => 9, // total posts
                       'post_status'    => 'publish',
                   ));
 
@@ -46,7 +46,8 @@
                           <?php else : // rest posts - small thumbnails ?>
                               <li class="post-item tie-standard">
                                   <a href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>" class="post-thumb">
-                                      <?php the_post_thumbnail('thumbnail', ['class' => 'tie-small-image']); ?>
+                                  <?php the_post_thumbnail([150, 102], ['class' => 'tie-small-image']); ?>
+
                                   </a>
                                   <div class="post-details">
                                       <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

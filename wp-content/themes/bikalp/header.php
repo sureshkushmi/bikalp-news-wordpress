@@ -32,7 +32,10 @@
 <link rel='stylesheet' id='tie-css-ilightbox-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/assets/ilightbox/dark-skin/skin13f7.css?ver=4.6.6' type='text/css' media='all' />
 <link rel='stylesheet' id='tie-theme-child-css-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/assets/style0b95.css?ver=b2ee273d18dca5e1308fd0073ab5d332' type='text/css' media='all' />
 <link rel='stylesheet' id='tie-css-style-custom-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/assets/custom-css/style-custom6777.css?ver=64526' type='text/css' media='all' />
+<link rel='stylesheet'  href='<?php echo get_stylesheet_directory_uri(); ?>/assets/custom-css/single.css?' type='text/css' media='all' />
 <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<!-- Font Awesome 5 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyFvjF2x8X2hA6zFnkF+g4jCkU4K6+0EwU7+fD7os9Hb4A0YV6wHz1GvYlYFJqR5GZqZtR5E5yB+X8R9TVk1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 <style id='tie-css-style-custom-inline-css' type='text/css'>

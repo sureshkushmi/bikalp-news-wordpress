@@ -8,7 +8,9 @@
             <div class="container-wrapper widget text-html">
               <h2>हाम्रो बारेमा</h2>
               <div class="Bikalpa News__about">
-                <p>'विकासका लागि सञ्चार' मूल नारा Bikalpa News युट्युब च्यानल तथा फेसबुक पेजबाट समेत संसारभर हेर्न सकिनेछ ।</p>
+                <p>वि.सं. २०६० सालमा स्थापित बिकल्प न्यूज नेपालको अग्रणी डिजिटल समाचार प्लेटफर्म हो। हामीले सटीक, विश्वसनीय र छिटो समाचार सेवा प्रदान गर्ने उद्देश्य राखेका छौं।
+
+बिकल्प न्यूजले राष्ट्रिय र अन्तर्राष्ट्रिय समाचार, राजनीति, अर्थतन्त्र, खेलकुद, प्रविधि, संस्कृति र मनोरञ्जनका समाचारहरू २४×७ डिजिटल माध्यमबाट प्रस्तुत गर्दछ। हाम्रो समाचार सामग्री वेबसाइट, मोबाइल एप, युट्युब च्यानल र फेसबुक पेज मार्फत संसारभर सजिलै पहुँचयोग्य छ।</p>
               </div>
             </div>
           </div>
@@ -16,14 +18,14 @@
           <!-- Contact -->
           <div class="tie-col-md-3 normal-side">
             <div class="container-wrapper widget text-html">
-              <h2>सम्पर्क &nbsp</h2>
-              <div class="font_size_18">
-                <p>Bikalp</p>
-                <p>
-                  <a href="#" target="_blank">
-                    <i class="fa fa-external-link m-5"></i> 
-                  </a>
-                </p>
+            <div><h2>सम्पर्क</h2><br>
+                <div class="font_size_18">
+                    <p>विकासका लागि सञ्चार </p>
+                    <p>काठमाडौं, नेपाल</p>
+                    <p><i class="fa fa-inbox m-5"></i> पोष्ट वक्स नं. XXXXXXX  </p>
+                    <p> <i class="fa fa-phone-square m-5"></i> ०१-XXXXXXX</p><p> <i class="fa fa-envelope m-5"></i> इमेल: info@bikalpnews.com</p>
+                
+                </div>
               </div>
             </div>
           </div>
@@ -31,27 +33,34 @@
           <!-- Our Team -->
           <div class="tie-col-md-3 normal-side">
             <div class="container-wrapper widget text-html">
-              <h2>हाम्रो टिम (Our Team) &nbsp</h2>
+            <div>
+              <h2>हाम्रो टिम ( Our Team ) </h2><br>
               <div class="font_size_20">
-                <p>News</p>
+                <p>ठाकुर प्रसाद आचार्य</p>
                 <span>प्रमुख</span><br>
-                <span>Bikalpa</span>
-                <br>
-                <a class="Bikalpa Newsbtn" href="#" target="_blank">View All</a>
+                <span>बिकल्प न्यूज</span>
+
+                <p>स्मिता थापा</p>
+                <span>संयोजक</span>
+
+                <p>अजय पाण्डे</p>
+                <span>सम्पादक</span>
+              </div>
+
               </div>
             </div>
           </div>
 
-          <!-- Download 
+
           <div class="tie-col-md-3 normal-side">
             <div class="container-wrapper widget text-html">
-              <h2>Download</h2>
+              <h2>विकल्प न्यूज</h2>
               <div class="font_size_18">
-                <p><i class="Bikalpa News__playstore m-5"></i> <a href="#">Bikalpa News</a></p>
-                <p><i class="Bikalpa News__appstore m-5"></i> <a href="#">Bikalpa News</a></p>
+                <p><i class=""></i> <a href="#">प्राइभेसी पोलिसी</a></p>
+                <p><i class=""></i> <a href="#">सम्पर्क</a></p>
               </div>
             </div>
-          </div>-->
+          </div>
 
         </div><!-- .tie-row -->
       </div><!-- .footer-widget-area -->
@@ -202,7 +211,7 @@ var tie = {"is_rtl":"","ajaxurl":"https:\/\/bikalpanews.com\/wp-admin\/admin-aja
  const swiper = new Swiper('.swiper', {
   loop: true,
   centeredSlides: true,          // Center the active slide
-  slidesPerView: 3,              // Show 3 slides: 1 full + 2 partial (prev + next)
+  slidesPerView: 4,              // Show 3 slides: 1 full + 2 partial (prev + next)
   spaceBetween: 20,
   pagination: {
     el: '.swiper-pagination',
